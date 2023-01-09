@@ -1,4 +1,4 @@
-import { IUser } from './user.entity';
+import { IUser, NewUserEntry } from './user.entity';
 import { v4 as uuid } from 'uuid';
 
 export class UserValue implements IUser {
@@ -6,7 +6,7 @@ export class UserValue implements IUser {
   email: string;
   id: string;
 
-  constructor(user: IUser) {
+  constructor(user: NewUserEntry) {
     this.name = user.name;
     this.email = user.email;
     this.id = uuid();

@@ -1,11 +1,11 @@
-import { IUser } from '../domain/user.entity';
+import { IUser, NewUserEntry } from '../domain/user.entity';
 import { UserValue } from '../domain/user.value';
 import { IUserRepository } from '../domain/user.repository';
 
 export class UserUseCase {
   constructor(private readonly userRepository: IUserRepository) {}
 
-  createUser = async (user: IUser) => {
+  createUser = async (user: NewUserEntry) => {
     const userInstance = new UserValue(user);
     const userCreated = await this.userRepository.createUser(userInstance);
     return userCreated;

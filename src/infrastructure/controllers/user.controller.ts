@@ -16,7 +16,7 @@ export class UserController {
     res.status(200).send(user);
   };
 
-  public getAllUsers = async (req: Request, res: Response) => {
+  public getAllUsers = async (_req: Request, res: Response) => {
     const users = await this.userUseCase.getAllUsers();
     res.status(200).send(users);
   };
